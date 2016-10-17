@@ -1,0 +1,45 @@
+<html>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBcbhPEhzaP7I3nc-68klhTIszvVX3SGkY",
+    authDomain: "tinovation-website-8c38e.firebaseapp.com",
+    databaseURL: "https://tinovation-website-8c38e.firebaseio.com",
+    storageBucket: "tinovation-website-8c38e.appspot.com",
+    messagingSenderId: "702860788651"
+  };
+  firebase.initializeApp(config);
+
+  // Get a reference to the database service
+var database = firebase.database();
+function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+}
+
+</script>
+
+<BODY>
+  <head>
+    <link rel="stylesheet" href="CSS/style.css" type="text/css" media="screen">
+  </head>
+
+<div id="wrapper">   <div id="hero">     <div class="header">       <h1>
+Fullscreen Hero image </h1>     </div>   </div>   <div id="content">     <h2>
+What is our product? </h2>     <p> Welcome to our product. We have made an
+inexpensive home security system. The system currently includes one doorbell
+with a camera. The camera has face recognition software which will identify
+the people who press our doorbell. We have a mobile app available on android
+and IOS where you can view recent activity, familiar faces and other features.
+</p>     <h2>How do you use our product? </h2>   </div>   <div id="footer">
+<p> eeeee -Sidd2016</p>   </div> </div> <button type="button"
+onclick="writeUserData('userId', 'kjhg', 'ukyg',
+'imageUrl')">DataBase</button> </BODY> </html>
+
+
+
